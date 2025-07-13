@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "numpy>=2.3.1",
+    "rich>=14.0.0",
 ]
 [dependency-groups]
 dev = [
@@ -17,10 +18,12 @@ dev = [
 line-length = 100
 lint.select = ["ALL"]
 lint.ignore = [
+    "A004",
     "COM812",
     "D",
     "EM101",
     "EM102",
+    "ERA001",
     "FIX",
     "G001",
     "G002",
