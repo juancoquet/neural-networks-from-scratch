@@ -7,12 +7,16 @@ def main() -> None:
 
     bias1, bias2, bias3 = 2, 3, 0.5  # one bias for each neuron
 
-    output1 = sum(i * w for i, w in zip(inputs, weights1, strict=True)) + bias1
-    output2 = sum(i * w for i, w in zip(inputs, weights2, strict=True)) + bias2
-    output3 = sum(i * w for i, w in zip(inputs, weights3, strict=True)) + bias3
+    output1 = _calculate_output(inputs, weights1, bias1)
+    output2 = _calculate_output(inputs, weights2, bias2)
+    output3 = _calculate_output(inputs, weights3, bias3)
 
     output = [output1, output2, output3]
     print(output)
+
+
+def _calculate_output(inputs: list[float], weights: list[float], bias: float) -> float:
+    return sum(i * w for i, w in zip(inputs, weights, strict=True)) + bias
 
 
 if __name__ == "__main__":
