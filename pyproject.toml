@@ -1,0 +1,9 @@
+[project]
+name = "nnfs"
+version = "0.1.0"
+description = "Following Neural Networks From Scratch, by Harrison Kinsley"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.3.1",
+]
