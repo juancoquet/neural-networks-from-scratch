@@ -6,4 +6,46 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "numpy>=2.3.1",
+    "rich>=14.0.0",
 ]
+[dependency-groups]
+dev = [
+    "pyright>=1.1.403",
+    "ruff>=0.12.3",
+]
+
+[tool.ruff]
+line-length = 100
+lint.select = ["ALL"]
+lint.ignore = [
+    "A004",
+    "COM812",
+    "D",
+    "EM101",
+    "EM102",
+    "ERA001",
+    "FIX",
+    "G001",
+    "G002",
+    "G003",
+    "G004",
+    "LOG015",
+    "RET504",
+    "T201",
+    "TD",
+    "TRY003",
+    "TRY300",
+]
+[tool.ruff.lint.extend-per-file-ignores]
+# test file linting exceptions
+"test_*.py" = [
+    "S101", # allow the use of asserts
+    "FBT", # allow boolean args
+    "PLR2004", # allow magic values in comparisons
+]
+[tool.ruff.lint.flake8-type-checking]
+runtime-evaluated-base-classes = ["pydantic.BaseModel"]
+
+[tool.pyright]
+typeCheckingMode = "strict"
+reportMissingTypeStubs = false
